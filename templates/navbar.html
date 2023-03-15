@@ -1,2 +1,12 @@
 NAV LOGO
 <hr>
+<form action="{% url 'home' %}" method="get">
+    <input type="text" name="q" placeholder="Search Rooms ...">
+</form>
+{% if request.user.is_authenticated %}
+    <p>Hello {{ request.user }}</p>
+    <a href="{% url 'logout' %}">Sign out</a>
+    {% else %}
+    <a href="{% url 'login' %}">Sign in</a>
+{% endif %}
+

@@ -5,6 +5,13 @@
     <title>BlinKit</title>
 </head>
 <body>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% include 'navbar.html' %}
 
 {% block content %}
